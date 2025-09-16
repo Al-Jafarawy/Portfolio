@@ -27,6 +27,8 @@ module.exports = {
       animation: {
         profile: "profile 8s ease-in-out infinite 1s",
       },
+      fontFamily: {
+     fancy: ["Cairo", "sans-serif"],    }, 
     },
   },
   plugins: [],

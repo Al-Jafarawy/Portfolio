@@ -75,6 +75,11 @@ const Home = () => {
 
         {/* icon */}
         <link href="/icon.png" rel="icon" type="image/x-icon" />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div>
