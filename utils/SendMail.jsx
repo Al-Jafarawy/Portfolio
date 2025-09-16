@@ -1,101 +1,98 @@
-import React, { Fragment, useState } from "react";
-import axios from "axios";
-import { FiMessageCircle } from "react-icons/fi";
+"use client";
+import React, { useState } from "react";
+import {
+  FiUser,
+  FiMail,
+  FiMessageCircle,
+  FiMessageSquare,
+} from "react-icons/fi";
 
-const SendMail = () => {
-  const [formData, setFormData] = useState({});
-  const [sending, setSending] = useState(false);
+const SendMailFinal = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const collectData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const sendMessage = (e) => {
-    e.preventDefault();
-
-    const { name, email, message, subject } = formData;
-
-    if (!name || !email || !subject || !message) {
-      return alert("Please Fill All Data");
-    }
-
-    setSending(true);
-    axios
-      .post("/api/mail/new", formData)
-      .then((res) => {
-        console.log(res.data);
-        setSending(false);
-        alert("Message Sended Successfully");
-        setFormData({});
-      })
-      .catch((err) => {
-        console.log(err);
-        setSending(false);
-        alert(err);
-      });
-  };
+  const inputClass =
+    "flex-1 bg-transparent outline-none text-gray-800 dark:text-gray-200";
 
   return (
-    <Fragment>
-      <section id='getInTouch'>
-        <div className='py-8 pt-4 shadow-zinc-300 dark:shadow-zinc-700 shadow-sm'>
-          <h3 className='text-3xl font-bold text-center pb-8 flex justify-center items-center gap-3'>
-            <span className='mr-3'>
-              <FiMessageCircle />
-            </span>
-            Drop A Message
-          </h3>
-
-          <form action='' onSubmit={sendMessage}>
-            <div className='flex flex-col gap-4 w-[90%] md:w-[35%] m-auto'>
-              <input
-                className='dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded'
-                id='name'
-                name='name'
-                onChange={collectData}
-                placeholder='Your Good Name'
-                value={formData.name || ""}
-              />
-              <input
-                className='dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded'
-                id='email'
-                name='email'
-                onChange={collectData}
-                placeholder='Your Email Address'
-                value={formData.email || ""}
-              />
-              <input
-                className='dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded'
-                id='subject'
-                name='subject'
-                onChange={collectData}
-                placeholder='Subject for mail'
-                value={formData.subject || ""}
-              />
-
-              <textarea
-                className='dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded'
-                id='message'
-                name='message'
-                onChange={collectData}
-                placeholder='Write Your Message'
-                rows='3'
-                value={formData.message || ""}
-              />
-
-              <button
-                className='font-bold text-white dark:bg-[#0ab0c2] disabled:cursor-default p-2 rounded dark:hover:bg-[#078795] bg-[#f91071] hover:bg-[#c72c6c]'
-                disabled={sending}
-                type='submit'
-              >
-                {sending ? "sending..." : "Send"}
-              </button>
-            </div>
-          </form>
+    <section className="flex flex-col justify-start items-center  bg-gray-100 dark:bg-gray-900 px-5 py-8 md:py-16">
+      <div className="text-center mb-8">
+        <div className=" flex justify-center gap-2">
+          <FiMessageSquare className="mx-auto text-3xl text-pink-500 dark:text-teal-400 mt-1.5 " />
+          <h2 className="text-3xl font-bold mb-2">Contact</h2>
         </div>
-      </section>
-    </Fragment>
+        <hr className="border-t-2 border-pink-500 w-24 mx-auto dark:border-teal-400" />
+      </div>
+
+      <form
+        action="https://api.web3forms.com/submit"
+        className="flex flex-col gap-4 w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+        method="POST"
+      >
+        <input
+          name="access_key"
+          type="hidden"
+          value="c3257d43-02fb-4ff0-9a67-2128b8f8fc43"
+        />
+
+        {/* Name */}
+        <div className="flex items-center border border-pink-500 dark:border-teal-400 rounded p-2 bg-white dark:bg-black">
+          <FiUser className="text-xl text-gray-500 dark:text-gray-300 flex-shrink-0" />
+          <input
+            className={inputClass + " ml-2"}
+            name="name"
+            onChange={collectData}
+            placeholder="Name"
+            required
+            type="text"
+            value={formData.name}
+          />
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center border border-pink-500 dark:border-teal-400 rounded p-2 bg-white dark:bg-black">
+          <FiMail className="text-xl text-gray-500 dark:text-gray-300 flex-shrink-0" />
+          <input
+            className={inputClass + " ml-2"}
+            name="email"
+            onChange={collectData}
+            placeholder="Email"
+            required
+            type="email"
+            value={formData.email}
+          />
+        </div>
+
+        {/* Message */}
+        <div className="flex items-start border border-pink-500 dark:border-teal-400 rounded p-2 bg-white dark:bg-black">
+          <FiMessageCircle className="text-xl text-gray-500 dark:text-gray-300 mt-2 flex-shrink-0" />
+          <textarea
+            className={inputClass + " ml-2 resize-none"}
+            name="message"
+            onChange={collectData}
+            placeholder="Message"
+            required
+            rows={5}
+            value={formData.message}
+          />
+        </div>
+
+        <button
+          className="bg-pink-500 hover:bg-pink-600 dark:bg-teal-400 dark:hover:bg-teal-500 text-white font-bold p-2 rounded transition-all mt-2"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </section>
   );
 };
 
-export default SendMail;
+export default SendMailFinal;

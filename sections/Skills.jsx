@@ -52,12 +52,12 @@ const TechStack = () => {
   return (
     <Fragment>
       <section
-        className='shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-hidden'
+        className=' shadow-sm overflow-hidden'
         id='techStack'
         ref={techStackRef}
       >
         <h2 className='text-3xl font-bold text-center p-4 flex justify-center items-center gap-3'>
-          <FaLaptopCode /> Tech Stack
+          <FaLaptopCode /> Tech Skills
         </h2>
 
         <div
