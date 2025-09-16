@@ -52,7 +52,7 @@ const TechStack = () => {
   return (
     <Fragment>
       <section
-        className=' shadow-sm overflow-hidden'
+        className='overflow-hidden'
         id='techStack'
         ref={techStackRef}
       >
