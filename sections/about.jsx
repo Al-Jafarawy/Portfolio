@@ -58,7 +58,7 @@ const About = () => {
             className=" shadow-sm transition-all duration-700 translate-x-[-900px] max-h-[500px] rounded-xl object-cover"
             height={350}
             ref={profile2Ref}
-            src="https://res.cloudinary.com/dma8z138n/image/upload/v1757947717/IMG_0267_k0lzp4.jpg"
+            src="https://res.cloudinary.com/dma8z138n/image/upload/v1757947714/IMG_0438_am0jp4.jpg"
             width={350}
           />
           <div

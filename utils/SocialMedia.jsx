@@ -38,7 +38,7 @@ const SocialMedia = () => {
     <Fragment>
     <div
   className="
-    flex flex-row justify-center gap-4 mt-6        /* للموبايل: أفقي وأسفل الانترو */
+    flex flex-row justify-center gap-4 mt-6    
     xl:flex-col xl:gap-4 xl:absolute xl:bottom-12 xl:left-14 xl:mt-0 xl:translate-x-0 z-10
   "
 >
@@ -65,29 +65,5 @@ const SocialMedia = () => {
   );
 };
 
-
-//   return (
-//     <Fragment>
-//   <div className="">
-//     {SocialMediaData.map((social, key) => (
-//       <Link className="w-fit" href={social.link} key={key}>
-//         <div
-//           className="p-2 rounded-full text-xl text-white"
-//           style={{ background: social.color }}
-//         >
-//           {social.icon}
-//         </div>
-//       </Link>
-//     ))}
-//     <button
-//       className="p-2 rounded-full text-xl bg-[#0072b1] text-white"
-//       onClick={() => setShowModal(true)}
-//     >
-//       <MdFeedback />
-//     </button>
-//   </div>
-// </Fragment>
-//   )
-// };
 
 export default SocialMedia;

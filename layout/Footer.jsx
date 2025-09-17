@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { MdFeedback } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { FaX, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +35,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="text-center md:text-left">
             <h2 className="mb-4 text-3xl font-extrabold tracking-wide text-indigo-900 dark:text-white leading-tight">
-              Ahmed
+              Ahmed&nbsp;
               <span className="inline md:block">Al-Jafarawy</span>
             </h2>
             <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0">
@@ -99,7 +100,7 @@ const Footer = () => {
             <h3 className="mb-4 text-lg font-bold text-indigo-900 dark:text-white uppercase tracking-wide">
               Connect
             </h3>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start sm:grid sm:grid-rows-2 sm:auto-cols-auto sm:grid-flow-col sm:ml-16">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start sm:grid sm:grid-rows-2 sm:auto-cols-auto sm:grid-flow-col sm:ml-16 md:ml-0 mt-6">
               {[
                 {
                   href: "https://www.linkedin.com/in/ahmed-al-jafarawy/",
@@ -118,8 +119,8 @@ const Footer = () => {
                 },
                 {
                   href: "https://x.com/AlJafarawy",
-                  icon: <FaTwitter size={18} />,
-                  gradient: "from-sky-500 to-sky-300",
+                  icon: <FaXTwitter size={18} />,
+                  gradient: "from-gray-800 to-black",
                 },
                 {
                   href: "https://www.instagram.com/ahmed_mo_aljafarawy/",
@@ -128,7 +129,7 @@ const Footer = () => {
                 },
               ].map(({ href, icon, gradient }, i) => (
                 <a
-                  className={`flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-r ${gradient} text-white transition transform hover:scale-110`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r ${gradient} text-white transition transform hover:scale-110`}
                   href={href}
                   key={i}
                   rel="noopener noreferrer"
@@ -139,7 +140,7 @@ const Footer = () => {
               ))}
               <button
                 aria-label="Feedback"
-                className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-green-700 text-white transition transform hover:scale-110"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-green-500 to-green-700 text-white transition transform hover:scale-110"
                 onClick={handleFeedbackClick}
               >
                 <MdFeedback size={18} />
