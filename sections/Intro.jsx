@@ -49,7 +49,7 @@ const Intro = () => {
       </Head>
       <section id="home">
         <div
-          className="w-full min-h-[100vh] overflow-x-hidden px-[5%] pt-[80px] md:flex flex-col md:flex-row items-center justify-between   gap-10 max-w-7xl m-auto"
+          className="w-full min-h-[100vh] overflow-x-hidden px-[5%] pt-[80px] md:flex flex-col md:flex-row items-center justify-between   gap-10 max-w-7xl m-auto "
           ref={homeRef}
         >
           <div
@@ -65,7 +65,7 @@ const Intro = () => {
             />
           </div>
           <div
-            className="transition-all duration-700 opacity-0 text-center md:text-left md:ml-16 order-2 md:order-1 w-full md:w-1/2   pt-16 md:mt-0"
+            className="transition-all duration-700 opacity-0 text-center md:text-left md:ml-16 order-2 md:order-1 w-full md:w-1/2   py-16 md:mt-0"
             ref={introRef}
           >
             <p className="py-1 text-2xl md:text-4xl font-semibold font-sans">
