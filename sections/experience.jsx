@@ -57,7 +57,7 @@ const FreelanceExperience = () => {
   return (
     <Fragment>
       <section
-        className="max-w-7xl mx-auto my-10 px-5 md:px-10 py-10 bg-red-100 dark:bg-[#1a1a1a] scroll-mt-20 "
+        className="max-w-7xl mx-auto my-26 py-20 px-5 md:px-10 py-10 bg-[#eee] dark:bg-[#1a1a1a] scroll-mt-20 "
         id="work-experience"
       >
         <h2 className="text-3xl font-bold text-center mb-6">Freelance Work</h2>

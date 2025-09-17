@@ -1,128 +1,117 @@
-import React, { Fragment, useContext, useState } from "react";
-import emailjs from "emailjs-com";
+"use client";
+import React, { useState, useRef, useEffect, Fragment } from "react";
+import {
+  FiUser,
+  FiMail,
+  FiMessageCircle,
+  FiMessageSquare,
+} from "react-icons/fi";
 
-import { PortfolioContext } from "@/contextApi/PortfolioContext";
+const SendMailFancy = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isVisible, setIsVisible] = useState(false);
 
-const Feedback = () => {
-  const { showModal, setShowModal } = useContext(PortfolioContext);
-  const [formData, setFormData] = useState({});
-  const [submit, setSubmit] = useState(false);
+  const formRef = useRef();
 
   const collectData = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const submitFeedback = async (e) => {
-    e.preventDefault();
-    setSubmit(true);
-    try {
-      await emailjs.send(
-        "service_hkl6uik",
-        "template_ylfy49i",
-        formData,
-        "DQv_RH-_nZ3Jm99eS"
-      );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "-100px" }
+    );
+    if (formRef.current) observer.observe(formRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-      setFormData({});
-      setSubmit(false);
-      setShowModal(false);
-      alert("Feedback sent successfully to prog.al.jafarawy@gmail.com!");
-    } catch (error) {
-      setSubmit(false);
-      alert("Error sending feedback: " + error.message);
-    }
-  };
+  const inputClass =
+    "flex-1 bg-transparent outline-none text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500";
 
   return (
     <Fragment>
-      <div
-        className={`fixed z-30 top-0 left-0 h-screen w-screen bg-[#80808082] flex justify-center md:items-center ${
-          showModal ? "" : "hidden"
-        }`}
+      <section
+        className="flex flex-col justify-start items-center bg-gray-50 dark:bg-gray-900 px-5 py-12 md:py-20"
+        ref={formRef}
       >
+        <h2 className="flex justify-center items-center gap-3 p-4 text-xl md:text-2xl font-extrabold text-center text-gray-900 dark:text-gray-100 font-fancy">
+          <FiMessageSquare className="mt-0 text-2xl md:text-3xl text-pink-500 dark:text-teal-400" />
+          Drop A Message
+        </h2>
+
+        <hr className="border-t-2 border-pink-500 w-24 mx-auto dark:border-teal-400 mb-8" />
+
         <form
-          className="dark:bg-black bg-[#ccf2f6] z-40 p-4 rounded sm:w-full sm:h-screen md:h-fit md:w-[500px] flex flex-col gap-4"
-          onSubmit={submitFeedback}
+          action="https://api.web3forms.com/submit"
+          className={`flex flex-col gap-5 w-full max-w-md md:max-w-xl lg:max-w-2xl bg-white dark:bg-gray-800 p-8 md:p-10 lg:p-12 rounded-2xl shadow-sm transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+          method="POST"
         >
-          <h3 className="text-center text-2xl font-bold dark:text-[#07d0e5] text-[#c72c6c]">
-            Feedback
-          </h3>
-          <p>As a developer, you understand the importance of feedback.</p>
-
           <input
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            name="name"
-            onChange={collectData}
-            placeholder="*Your Name"
-            required
-            value={formData.name || ""}
-          />
-          <input
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            name="email"
-            onChange={collectData}
-            placeholder="Your Email Address"
-            type="email"
-            value={formData.email || ""}
-          />
-          <input
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            max="5"
-            min="1"
-            name="rating"
-            onChange={collectData}
-            placeholder="*Rating out of 5"
-            required
-            type="number"
-            value={formData.rating || ""}
-          />
-          <input
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            name="good"
-            onChange={collectData}
-            placeholder="What is good about this Project ?"
-            value={formData.good || ""}
-          />
-          <input
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            name="bad"
-            onChange={collectData}
-            placeholder="What is bad about this Project ?"
-            value={formData.bad || ""}
-          />
-          <textarea
-            className="dark:bg-black border dark:border-[#07d0e5] border-[#c72c6c] p-2 rounded text-[#07d0e5]"
-            name="suggetion"
-            onChange={collectData}
-            placeholder="What is Your Suggetion ?"
-            rows="3"
-            value={formData.suggetion || ""}
+            name="access_key"
+            type="hidden"
+            value="c3257d43-02fb-4ff0-9a67-2128b8f8fc43"
           />
 
-          <div className="flex justify-between">
-            <button
-              className="font-bold px-4 p-2 rounded text-white dark:bg-[#0ab0c2] disabled:cursor-default dark:hover:bg-[#078795] bg-[#f91071] hover:bg-[#c72c6c]"
-              onClick={() => {
-                setShowModal(false);
-                setFormData({});
-              }}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="font-bold px-4 p-2 rounded text-white dark:bg-[#0ab0c2] disabled:cursor-default dark:hover:bg-[#078795] bg-[#f91071] hover:bg-[#c72c6c]"
-              disabled={submit}
-              type="submit"
-            >
-              {submit ? "Submitting.." : "Submit"}
-            </button>
+          {/* Name + Email*/}
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1">
+              <FiUser className="flex-shrink-0 text-2xl text-gray-400 dark:text-gray-500" />
+              <input
+                className={inputClass + " ml-3 text-base md:text-lg"}
+                name="name"
+                onChange={collectData}
+                placeholder="Name"
+                required
+                type="text"
+                value={formData.name}
+              />
+            </div>
+
+            <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1">
+              <FiMail className="flex-shrink-0 text-2xl text-gray-400 dark:text-gray-500" />
+              <input
+                className={inputClass + " ml-3 text-base md:text-lg"}
+                name="email"
+                onChange={collectData}
+                placeholder="Email"
+                required
+                type="email"
+                value={formData.email}
+              />
+            </div>
           </div>
+
+          {/* Message */}
+          <div className="flex items-start border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md">
+            <FiMessageCircle className="flex-shrink-0 mt-2 text-2xl text-gray-400 dark:text-gray-500" />
+            <textarea
+              className={inputClass + " ml-3 resize-none text-base md:text-lg"}
+              name="message"
+              onChange={collectData}
+              placeholder="Message"
+              required
+              rows={5}
+              value={formData.message}
+            />
+          </div>
+
+          <button
+            className="bg-gradient-to-r from-pink-500 to-pink-600 dark:from-teal-400 dark:to-teal-500 hover:scale-105 transform transition-all text-white font-semibold p-3 rounded-xl shadow-lg mt-2"
+            type="submit"
+          >
+            Submit
+          </button>
         </form>
-      </div>
+      </section>
     </Fragment>
   );
 };
 
-export default Feedback;
+export default SendMailFancy;
