@@ -60,8 +60,7 @@ const Intro = () => {
               alt="Profile"
               className="w-[200px] md:w-[300px] aspect-square object-cover rounded-full border-[4px] border-[#87ff8d]  animate-profile"
               height={300}
-              src="/images/pic.jpg"
-              unoptimized
+              src="https://res.cloudinary.com/dma8z138n/image/upload/v1758078490/Pic_ixnkgw.jpg"
               width={300}
             />
           </div>
