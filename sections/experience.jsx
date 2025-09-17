@@ -56,7 +56,10 @@ const FreelanceExperience = () => {
 
   return (
     <Fragment>
-      <section className="max-w-7xl mx-auto my-10 px-5 md:px-10 py-10 bg-red-100 dark:bg-[#1a1a1a] ">
+      <section
+        className="max-w-7xl mx-auto my-10 px-5 md:px-10 py-10 bg-red-100 dark:bg-[#1a1a1a] scroll-mt-20 "
+        id="work-experience"
+      >
         <h2 className="text-3xl font-bold text-center mb-10">Freelance Work</h2>
 
         <motion.div
@@ -68,11 +71,7 @@ const FreelanceExperience = () => {
         >
           {platforms.map((platform, idx) => (
             <motion.a
-              className={`flex flex-col justify-center items-center gap-2 p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 ${
-                idx === platforms.length - 1 && platforms.length % 2 !== 0
-                  ? "justify-self-center"
-                  : ""
-              }`}
+              className="flex flex-col justify-center items-center gap-2 p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800 "
               href={platform.link}
               key={idx}
               rel="noopener noreferrer"
