@@ -15,45 +15,42 @@ const Project = () => {
   const ProjectsData = {
     React: [
       {
-        projectName: "YouTube Clone",
+        projectName: "",
         liveUrl: "https://youtube-clone-shivraj.vercel.app",
         githubUrl: "https://github.com/iamshiv007/yotube-clone",
         projectImage: {
-          imageUrl:
-            "http://res.cloudinary.com/dqfrtazgi/image/upload/v1696218286/t1zjvlwogccwit9888w7.png",
+          imageUrl: "",
         },
         techs: ["ReactJS", "ContextAPI", "ChakraUI", "YoutubeAPI"],
       },
       {
-        projectName: "Eccommerce Application",
-        liveUrl: "https://ecommerce-application-shivraj.vercel.app",
-        githubUrl: "https://github.com/iamshiv007/ecommerce-frontend",
+        projectName: "",
+        liveUrl: "",
+        githubUrl: "",
         projectImage: {
-          imageUrl:
-            "http://res.cloudinary.com/dqfrtazgi/image/upload/v1696220173/lnnt6nmesjvvmo3nx9ep.png",
+          imageUrl: "",
         },
         techs: ["ReactJS", "NodeJS", "Express", "MongoDB", "Redux Toolkit"],
       },
     ],
     JavaScript: [
       {
-        projectName: "Shovee Portfolio Generator",
-        liveUrl: "https://shovee.com",
-        githubUrl: "https://github.com/iamshiv007/shovee",
+        projectName: "",
+        liveUrl: "",
+        githubUrl: "",
         projectImage: {
-          imageUrl:
-            "http://res.cloudinary.com/dqfrtazgi/image/upload/v1696218285/yn3naeznjfgszsbbjr92.png",
+          imageUrl: "",
         },
         techs: ["NextJS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
       },
     ],
     CSS: [
       {
-        projectName: "CSS Animation Demo",
-        liveUrl: "https://css-demo.vercel.app",
-        githubUrl: "https://github.com/iamshiv007/css-demo",
+        projectName: "",
+        liveUrl: "",
+        githubUrl: "",
         projectImage: {
-          imageUrl: "https://via.placeholder.com/330x192.png?text=CSS+Project",
+          imageUrl: "",
         },
         techs: ["CSS3", "Animations", "Keyframes"],
       },

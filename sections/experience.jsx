@@ -61,8 +61,7 @@ const FreelanceExperience = () => {
         id="work-experience"
       >
         <h2 className="text-3xl font-bold text-center mb-6">Freelance Work</h2>
-                <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
-
+        <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
 
         <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-center items-start"
