@@ -15,11 +15,11 @@ const Project = () => {
   const ProjectsData = {
     React: [
       {
-        projectName: "",
-        liveUrl: "https://youtube-clone-shivraj.vercel.app",
-        githubUrl: "https://github.com/iamshiv007/yotube-clone",
+        projectName: "Bayti-Home",
+        liveUrl: "https://bayti-home.vercel.app/",
+        githubUrl: "https://github.com/Al-Jafarawy/Bayti-Home.git",
         projectImage: {
-          imageUrl: "",
+          imageUrl: "https://res.cloudinary.com/dma8z138n/image/upload/v1757802276/Screenshot_2025-09-14_012147_j1xmch.png",
         },
         techs: ["ReactJS", "ContextAPI", "ChakraUI", "YoutubeAPI"],
       },
@@ -35,13 +35,22 @@ const Project = () => {
     ],
     JavaScript: [
       {
-        projectName: "",
-        liveUrl: "",
+        projectName: "Youtube Semiulation",
+        liveUrl: "https://al-jafarawy.github.io/Youtube/",
         githubUrl: "",
         projectImage: {
-          imageUrl: "",
+          imageUrl: "/images/youtube.png",
         },
-        techs: ["NextJS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
+        techs: ["JS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
+      },
+      {
+        projectName: "Amazon Semiulation",
+        liveUrl: "https://al-jafarawy.github.io/Amazon/amazon.html",
+        githubUrl: "",
+        projectImage: {
+          imageUrl: "/images/amazon.png",
+        },
+        techs: ["JS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
       },
     ],
     CSS: [
