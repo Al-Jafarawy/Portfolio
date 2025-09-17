@@ -58,14 +58,14 @@ const Intro = () => {
           >
             <Image
               alt="Profile"
-              className="w-[200px] md:w-[300px] aspect-square object-cover rounded-full border-[4px] border-[#87ff8d]  animate-profile"
+              className="w-3/4 md:w-[300px] aspect-square object-cover rounded-full border-[4px] border-[#87ff8d] animate-profile"
               height={300}
               src="https://res.cloudinary.com/dma8z138n/image/upload/v1758078490/Pic_ixnkgw.jpg"
               width={300}
             />
           </div>
           <div
-            className="transition-all duration-700 opacity-0 text-center md:text-left md:ml-16 order-2 md:order-1 w-full md:w-1/2 mt-6 sm:mt-8 md:mt-0"
+            className="transition-all duration-700 opacity-0 text-center md:text-left md:ml-16 order-2 md:order-1 w-full md:w-1/2   pt-16 md:mt-0"
             ref={introRef}
           >
             <p className="py-1 text-2xl md:text-4xl font-semibold font-sans">
@@ -79,7 +79,7 @@ const Intro = () => {
             </p>
             <div className="mt-3 md:mt-6 flex flex-col md:flex-row gap-3 md:gap-5 justify-center md:justify-start">
               <Link
-                className="text-white text-xl font-semibold rounded bg-red-400 hover:bg-red-500 px-2 py-1 text-center"
+                className="text-white text-xl font-semibold rounded bg-[#c72c6c] hover:bg-[#a31f59] px-2 py-1 text-center"
                 href="#getInTouch"
               >
                 Hire me

@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import Link from "next/link";
 import { MdFeedback } from "react-icons/md";
 import { BsGithub } from "react-icons/bs";
-import { FaLinkedinIn ,FaFacebookF} from "react-icons/fa";
+import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 import { PortfolioContext } from "@/contextApi/PortfolioContext";
@@ -36,9 +36,7 @@ const SocialMedia = () => {
 
   return (
     <Fragment>
-      <div
-        className="flex flex-row xl:flex-col gap-4 z-10 absolute bottom-24 xl:bottom-12 left-1/2 xl:left-14 transform -translate-x-1/2 xl:translate-x-0"
-      >
+      <div className="flex flex-row xl:flex-col gap-4 z-10 absolute bottom-24 xl:bottom-12 left-1/2 xl:left-14 transform -translate-x-1/2 xl:translate-x-0">
         {SocialMediaData.map((social, key) => (
           <Link className="w-fit" href={social.link} key={key}>
             <div
@@ -50,7 +48,7 @@ const SocialMedia = () => {
           </Link>
         ))}
         <button
-          className="p-2 rounded-full text-xl bg-[#f2925a] text-white"
+          className="p-2 rounded-full text-xl bg-[#0072b1] text-white "
           onClick={() => setShowModal(true)}
         >
           <MdFeedback />
