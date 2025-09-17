@@ -94,9 +94,9 @@ const Project = () => {
         <div className="flex justify-center gap-4 mb-6 flex-wrap">
           {["All", "React", "JavaScript", "CSS"].map((sec) => (
             <button
-              className={`px-4 py-2 rounded font-semibold transition ${
+              className={`px-4 py-2 rounded font-semibold transition-colors duration-300 ${
                 activeSection === sec
-                  ? "bg-red-800 dark:bg-gray-800 text-white"
+                  ? "bg-red-800 dark:bg-teal-700 text-white"
                   : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
               }`}
               key={sec}

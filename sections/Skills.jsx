@@ -199,20 +199,18 @@ const TechStack = () => {
           <FaLaptopCode /> Tech Stack
         </h2>
         <hr className="border-t-4 border-[#c72c6c] w-20 dark:border-teal-400 mx-auto mb-8" />
-
         <div
-          className="pop-down transition-all w-fit duration-500 m-auto rounded-lg border  border-black dark:border-white border-solid overflow-hidden "
+          className="flex justify-center gap-4 mb-8 flex-wrap"
           ref={buttonsRef}
         >
           {["Advance", "Good", "Familiar"].map((cat) => (
             <button
-              className={`w-[120px] md:w-[150px] p-2 font-bold ${
-                section === cat ? "bg-red-600" : ""
-              } transition-all ${
-                cat === "Good"
-                  ? "border-l border-r border-black dark:border-white border-solid"
-                  : ""
-              }`}
+              className={`px-4 py-2 rounded font-semibold transition-all duration-300
+      ${
+        section === cat
+          ? "bg-red-800 dark:bg-teal-700 text-white shadow-md scale-105"
+          : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+      }`}
               key={cat}
               onClick={() => {
                 setSection(cat);

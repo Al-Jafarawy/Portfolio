@@ -1,9 +1,10 @@
 "use client";
+
 import React, { Fragment, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { FaUserCheck } from "react-icons/fa";
 import { ImLocation } from "react-icons/im";
-
+import { CiLaptop } from "react-icons/ci";
 const About = () => {
   const [isAbout, setIsAbout] = useState(false);
 
@@ -66,13 +67,18 @@ const About = () => {
             ref={aboutInfoRef}
           >
             {/* Full Name */}
-            <p className="text-3xl text-center md:text-left font-semibold text-[#c72c6c] dark:text-[#07d0e5]">
+            <p className="text-3xl text-center md:text-left font-semibold text-[#c72c6c] dark:text-[#07d0e5] pb-2">
               Ahmed Al-Jafarawy
             </p>
             {/* Profil Name */}
-            <p className="text-center md:text-left text-red-600 mt-1">
-              Frontend developer
-            </p>
+
+            <div className="flex items-center gap-2 text-[#0b0c0c] dark:text-[#07d0e5] mt-2 justify-center md:justify-start">
+              <CiLaptop style={{ fontSize: 20 }} />
+              <p className="text-center md:text-left text-teal">
+                Frontend developer
+              </p>
+            </div>
+
             {/* Location */}
             <div className="flex flex-wrap justify-center md:justify-normal gap-5">
               <div className="w-fit mt-5 flex flex-col items-start gap-2">
@@ -83,7 +89,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="mt-5 text-justify">
+            <div className="mt-5 text-left">
               <p className="text-gray-600 dark:text-gray-300">
                 I am a Front-End Developer passionate about creating modern and
                 responsive web applications. I enjoy working with React and
