@@ -10,7 +10,6 @@ const Intro = dynamic(() => import("@/sections/Intro"));
 const Skills = dynamic(() => import("@/sections/Skills"));
 const Projects = dynamic(() => import("@/sections/Projects"));
 const SendMail = dynamic(() => import("@/utils/SendMail"));
-const SocialMedia = dynamic(() => import("@/utils/SocialMedia"));
 const Feedback = dynamic(() => import("@/utils/Feedback"));
 
 const Home = () => {
@@ -89,7 +88,6 @@ const Home = () => {
           <Skills />
           <Experience />
           <Projects />
-          <SocialMedia />
           <SendMail />
           <Footer />
           <Feedback />
