@@ -58,10 +58,10 @@ const Intro = () => {
           >
             <Image
               alt="Profile"
-              className="w-[200px] md:w-[300px] aspect-square object-cover rounded-full  border-[4px] border-[#87ff8d] relative z-20 animate-profile"
+              className="w-[200px] md:w-[300px] aspect-square object-cover rounded-full border-[4px] border-[#87ff8d]  animate-profile"
               height={300}
-              priority
               src="/images/pic.jpg"
+              unoptimized
               width={300}
             />
           </div>
