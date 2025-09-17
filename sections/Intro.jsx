@@ -51,7 +51,7 @@ const Intro = () => {
       </Head>
       <section id="home">
         <div
-          className="w-full min-h-[87vh] md:min-h[70vh] lg:min-h-[100vh] overflow-x-hidden px-[5%] pt-[80px] md:flex flex-col md:flex-row items-center justify-between   gap-10 max-w-7xl m-auto "
+          className="w-full min-h-[85vh] md:min-h[70vh] lg:min-h-[100vh] overflow-x-hidden px-[5%] pt-[80px] md:flex flex-col md:flex-row items-center justify-between   gap-10 max-w-7xl m-auto "
           ref={homeRef}
         >
           <div
