@@ -43,13 +43,15 @@ const About = () => {
   return (
     <Fragment>
       <section
-        className=" shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden max-w-7xl mx-auto my-10 rounded-xl bg-white dark:bg-[#0b0c0c] "
+        className=" shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden max-w-7xl mx-auto my-10 rounded-xl bg-white dark:bg-[#0b0c0c] scroll-mt-20"
         id="about"
         ref={aboutRef}
       >
         <h2 className="text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3">
           <FaUserCheck /> About me
         </h2>
+        <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
+
         <div className="pb-[30px] px-[20px] md:px-[10px] lg:px-[20px] md:flex justify-center md:justify-evenly  items-center bg-red-100 dark:bg-[#1a1a1a] p-8 rounded-b-xl">
           <Image
             alt="about image"

@@ -11,7 +11,6 @@ const Skills = dynamic(() => import("@/sections/Skills"));
 const Projects = dynamic(() => import("@/sections/Projects"));
 const SendMail = dynamic(() => import("@/utils/SendMail"));
 const SocialMedia = dynamic(() => import("@/utils/SocialMedia"));
-const ChatSystem = dynamic(() => import("@/utils/ChatSystem"));
 const Feedback = dynamic(() => import("@/utils/Feedback"));
 
 const Home = () => {
@@ -93,9 +92,6 @@ const Home = () => {
           <SocialMedia />
           <SendMail />
           <Footer />
-          <div className="z-40">
-            <ChatSystem />
-          </div>
           <Feedback />
         </div>
       </div>

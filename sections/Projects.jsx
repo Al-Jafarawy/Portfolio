@@ -40,6 +40,7 @@ const Project = () => {
         <h2 className='text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3'>
           <CgWebsite /> Projects
         </h2>
+        <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
 
         <div
           className='min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-8 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700'

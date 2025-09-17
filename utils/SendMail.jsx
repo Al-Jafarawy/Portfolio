@@ -40,17 +40,23 @@ const SendMailFancy = () => {
         ref={formRef}
       >
         <h2 className="flex justify-center items-center gap-3 p-4 text-xl md:text-2xl font-extrabold text-center text-gray-900 dark:text-gray-100 font-fancy">
-          <FiMessageSquare className="mt-0 text-2xl md:text-3xl text-pink-500 dark:text-teal-400" />
+          <FiMessageSquare className="mt-0 text-2xl md:text-3xl mt-1" />
           Drop A Message
         </h2>
 
-        <hr className="border-t-2 border-pink-500 w-24 mx-auto dark:border-teal-400 mb-8" />
+        <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
 
         <form
           action="https://api.web3forms.com/submit"
-          className={`flex flex-col gap-5 w-full max-w-md md:max-w-xl lg:max-w-2xl bg-white dark:bg-gray-800 p-8 md:p-10 lg:p-12 rounded-2xl shadow-sm transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`flex flex-col gap-5 w-full max-w-md md:max-w-xl lg:max-w-2xl p-8 md:p-10 lg:p-12 rounded-2xl shadow-sm transition-all duration-700
+            bg-white dark:bg-gray-800
+            ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }
+            hover:shadow-lg
+          `}
           method="POST"
         >
           <input
@@ -59,10 +65,14 @@ const SendMailFancy = () => {
             value="c3257d43-02fb-4ff0-9a67-2128b8f8fc43"
           />
 
-          {/* Name + Email*/}
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1">
-              <FiUser className="flex-shrink-0 text-2xl text-gray-400 dark:text-gray-500" />
+          {/* Name + Email */}
+          <div className="flex flex-col md:flex-row gap-4 overflow-hidden">
+            <div
+              className="flex items-center border rounded-xl p-3
+              border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900
+              focus-within:ring-2 focus-within:ring-[#c72c6c] dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1"
+            >
+              <FiUser className="text-2xl text-gray-400 dark:text-gray-500" />
               <input
                 className={inputClass + " ml-3 text-base md:text-lg"}
                 name="name"
@@ -74,8 +84,12 @@ const SendMailFancy = () => {
               />
             </div>
 
-            <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1">
-              <FiMail className="flex-shrink-0 text-2xl text-gray-400 dark:text-gray-500" />
+            <div
+              className="flex items-center border rounded-xl p-3
+              border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900
+              focus-within:ring-2 focus-within:ring-[#c72c6c] dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md flex-1"
+            >
+              <FiMail className="text-2xl text-gray-400 dark:text-gray-500" />
               <input
                 className={inputClass + " ml-3 text-base md:text-lg"}
                 name="email"
@@ -89,8 +103,12 @@ const SendMailFancy = () => {
           </div>
 
           {/* Message */}
-          <div className="flex items-start border border-gray-300 dark:border-gray-600 rounded-xl p-3 bg-gray-50 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-pink-500 dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md">
-            <FiMessageCircle className="flex-shrink-0 mt-2 text-2xl text-gray-400 dark:text-gray-500" />
+          <div
+            className="flex items-start border rounded-xl p-3
+            border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900
+            focus-within:ring-2 focus-within:ring-[#c72c6c] dark:focus-within:ring-teal-400 transition-all duration-300 hover:shadow-md"
+          >
+            <FiMessageCircle className="mt-2 text-2xl text-gray-400 dark:text-gray-500" />
             <textarea
               className={inputClass + " ml-3 resize-none text-base md:text-lg"}
               name="message"
@@ -103,7 +121,7 @@ const SendMailFancy = () => {
           </div>
 
           <button
-            className="bg-gradient-to-r from-pink-500 to-pink-600 dark:from-teal-400 dark:to-teal-500 hover:scale-105 transform transition-all text-white font-semibold p-3 rounded-xl shadow-lg mt-2"
+            className="bg-gradient-to-r from-[#c72c6c] to-[#a12b4c] dark:from-teal-400 dark:to-teal-500 hover:scale-105 transform transition-all text-white font-semibold p-3 rounded-xl shadow-lg mt-2"
             type="submit"
           >
             Submit

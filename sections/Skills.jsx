@@ -69,7 +69,7 @@ const TechStackData = [
         name: "Meterial UI",
         icon: <SiMui className="md:text-4xl text-2xl" color="#29b6f6" />,
       },
-    
+
       {
         name: "Vercel",
         icon: (
@@ -190,13 +190,18 @@ const TechStack = () => {
 
   return (
     <Fragment>
-      <section className="overflow-hidden scroll-mt-10" id="techStack" ref={techStackRef}>
-        <h2 className="text-3xl font-bold text-center p-4 flex justify-center items-center gap-3  ">
+      <section
+        className="overflow-hidden scroll-mt-20"
+        id="techStack"
+        ref={techStackRef}
+      >
+        <h2 className="text-3xl font-bold text-center flex justify-center items-center gap-3 mb-3">
           <FaLaptopCode /> Tech Stack
         </h2>
+        <hr className="border-t-4 border-[#c72c6c] w-20 dark:border-teal-400 mx-auto mb-8" />
 
         <div
-          className="pop-down transition-all w-fit duration-500 m-auto rounded-lg border  border-black dark:border-white border-solid overflow-hidden"
+          className="pop-down transition-all w-fit duration-500 m-auto rounded-lg border  border-black dark:border-white border-solid overflow-hidden "
           ref={buttonsRef}
         >
           {["Advance", "Good", "Familiar"].map((cat) => (
