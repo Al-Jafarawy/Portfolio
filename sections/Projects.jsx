@@ -19,18 +19,28 @@ const Project = () => {
         liveUrl: "https://bayti-home.vercel.app/",
         githubUrl: "https://github.com/Al-Jafarawy/Bayti-Home.git",
         projectImage: {
-          imageUrl: "https://res.cloudinary.com/dma8z138n/image/upload/v1757802276/Screenshot_2025-09-14_012147_j1xmch.png",
+          imageUrl:
+            "https://res.cloudinary.com/dma8z138n/image/upload/v1757802276/Screenshot_2025-09-14_012147_j1xmch.png",
         },
-        techs: ["ReactJS", "ContextAPI", "ChakraUI", "YoutubeAPI"],
+        techs: ["ReactJS", "ContextAPI", "ChakraUI", "Redux Toolkit","Redux" ],
       },
       {
-        projectName: "",
+        projectName: "TeachHub",
         liveUrl: "",
         githubUrl: "",
         projectImage: {
           imageUrl: "",
         },
-        techs: ["ReactJS", "NodeJS", "Express", "MongoDB", "Redux Toolkit"],
+        techs: ["ReactVit", "Tailwand", "Firebase", "Redux Toolkit"],
+      },
+      {
+        projectName: "ToDO List",
+        liveUrl: "",
+        githubUrl: "",
+        projectImage: {
+          imageUrl: "",
+        },
+        techs: ["ReactVit", "Tailwand", "Firebase", "Redux Toolkit"],
       },
     ],
     JavaScript: [
@@ -41,27 +51,45 @@ const Project = () => {
         projectImage: {
           imageUrl: "/images/youtube.png",
         },
-        techs: ["JS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
+        techs: ["HTML", "CSS", "GitHub"],
       },
       {
         projectName: "Amazon Semiulation",
         liveUrl: "https://al-jafarawy.github.io/Amazon/amazon.html",
-        githubUrl: "",
+        githubUrl: "https://github.com/Al-Jafarawy/Amazon.git",
         projectImage: {
           imageUrl: "/images/amazon.png",
         },
-        techs: ["JS", "TailwindCSS", "Redux Toolkit", "Cloudinary"],
+        techs: ["HTML", "CSS", "GitHub", "Vanilla JS"],
       },
     ],
     CSS: [
-      {
-        projectName: "",
-        liveUrl: "",
+       {
+        projectName: "Youtube Semiulation",
+        liveUrl: "https://al-jafarawy.github.io/Youtube/",
         githubUrl: "",
         projectImage: {
-          imageUrl: "",
+          imageUrl: "/images/youtube.png",
         },
-        techs: ["CSS3", "Animations", "Keyframes"],
+        techs: ["HTML","CSS3", "Animations", "Keyframes", "GitHub"],
+      },
+       {
+        projectName: "Japanies Restorant",
+        liveUrl: "https://al-jafarawy.github.io/Old-CSS-Practicing/index",
+        githubUrl: "https://github.com/Al-Jafarawy/Old-CSS-Practicing.git",
+        projectImage: {
+          imageUrl: "/images/japan.png",
+        },
+        techs: ["HTML","CSS3", "Animations", "Keyframes", "GitHub"],
+      },
+      {
+        projectName: "Old Portfolio",
+        liveUrl: " https://al-jafarawy.github.io/Al-Jafarawy/",
+        githubUrl: "https://github.com/Al-Jafarawy/Al-Jafarawy.git",
+        projectImage: {
+          imageUrl: "/images/portfolio.png",
+        },
+        techs: ["HTML","CSS3", "Animations", "Keyframes"],
       },
     ],
   };
