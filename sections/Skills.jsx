@@ -1,6 +1,8 @@
 "use client";
-import React, { Fragment, useState, useEffect, useRef } from "react";
+
+// React Icons
 import {
+  // FA
   FaLaptopCode,
   FaBootstrap,
   FaCss3Alt,
@@ -8,10 +10,16 @@ import {
   FaPhp,
   FaShopify,
   FaJava,
+  FaNode,
+  FaDocker,
+  // AI
+  AiFillHtml5,
+  // BS
+  BsGit,
+  BsGithub,
 } from "react-icons/fa";
-import { AiFillHtml5 } from "react-icons/ai";
 import {
-  SiNodedotjs,
+  // SI
   SiNextdotjs,
   SiVercel,
   SiNetlify,
@@ -19,13 +27,21 @@ import {
   SiRedux,
   SiTailwindcss,
   SiMui,
-  SiChakraui,
   SiFirebase,
   SiTypescript,
-  SiJquery,
+  SiDjango,
+  SiElixir,
+  SiFramer,
+  SiReactrouter,
 } from "react-icons/si";
-import { DiJavascript1, DiReact, DiMongodb, DiSass } from "react-icons/di";
-import { BsGit, BsGithub } from "react-icons/bs";
+import React, { Fragment, useState, useEffect, useRef } from "react";
+import {
+  // DI
+  DiJavascript1,
+  DiReact,
+  DiMongodb,
+  DiSass,
+} from "react-icons/di";
 import { TbBrandReactNative } from "react-icons/tb";
 import { GrMysql } from "react-icons/gr";
 
@@ -69,7 +85,6 @@ const TechStackData = [
         name: "Meterial UI",
         icon: <SiMui className="md:text-4xl text-2xl" color="#29b6f6" />,
       },
-
       {
         name: "Vercel",
         icon: (
@@ -88,20 +103,14 @@ const TechStackData = [
           <SiNextdotjs className="md:text-4xl text-2xl dark:text-white text-black" />
         ),
       },
-
       {
         name: "Express",
         icon: <SiExpress className="md:text-4xl text-2xl" color="#555555" />,
       },
       {
-        name: "MongoDB",
-        icon: <DiMongodb className="md:text-4xl text-2xl" color="#4caf50" />,
-      },
-      {
         name: "Firebase",
         icon: <SiFirebase className="md:text-4xl text-2xl" color="#ffcd33" />,
       },
-
       {
         name: "Netlify",
         icon: <SiNetlify className="md:text-4xl text-2xl" color="#31b5ba" />,
@@ -110,13 +119,26 @@ const TechStackData = [
         name: "Git",
         icon: <BsGit className="md:text-4xl text-2xl" color="#f4511e" />,
       },
+      {
+        name: "Framer Motion",
+        icon: <SiFramer className="md:text-4xl text-2xl" color="#ff0050" />,
+      },
+      {
+        name: "React Router",
+        icon: (
+          <SiReactrouter className="md:text-4xl text-2xl" color="#f44250" />
+        ),
+      },
+      {
+        name: "Elixir",
+        icon: <SiElixir className="md:text-4xl text-2xl" color="#4B275F" />,
+      },
     ],
     Familiar: [
       {
         name: "TypeScript",
         icon: <SiTypescript className="md:text-4xl text-2xl" color="#377cc8" />,
       },
-
       {
         name: "React Native",
         icon: (
@@ -126,7 +148,6 @@ const TechStackData = [
           />
         ),
       },
-
       {
         name: "JAVA",
         icon: <FaJava className="md:text-4xl text-2xl" color="#547c99" />,
@@ -135,10 +156,21 @@ const TechStackData = [
         name: "SASS",
         icon: <DiSass className="md:text-4xl text-2xl" color="#f06292" />,
       },
-
       {
         name: "Shopify",
         icon: <FaShopify className="md:text-4xl text-2xl" color="#99c14f" />,
+      },
+      {
+        name: "Node.js",
+        icon: <FaNode className="md:text-4xl text-2xl" color="#539e43" />,
+      },
+      {
+        name: "Django",
+        icon: <SiDjango className="md:text-4xl text-2xl" color="#092E20" />,
+      },
+      {
+        name: "Docker",
+        icon: <FaDocker className="md:text-4xl text-2xl" color="#2496ed" />,
       },
     ],
   },
