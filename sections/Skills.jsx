@@ -1,25 +1,18 @@
 "use client";
 
+import React, { Fragment, useState, useEffect, useRef } from "react";
 // React Icons
 import {
-  // FA
   FaLaptopCode,
   FaBootstrap,
   FaCss3Alt,
-  FaAngular,
-  FaPhp,
   FaShopify,
-  FaJava,
   FaNode,
   FaDocker,
-  // AI
-  AiFillHtml5,
-  // BS
-  BsGit,
-  BsGithub,
 } from "react-icons/fa";
+import { AiFillHtml5 } from "react-icons/ai";
+import { BsGit, BsGithub } from "react-icons/bs";
 import {
-  // SI
   SiNextdotjs,
   SiVercel,
   SiNetlify,
@@ -29,149 +22,43 @@ import {
   SiMui,
   SiFirebase,
   SiTypescript,
-  SiDjango,
-  SiElixir,
   SiFramer,
   SiReactrouter,
 } from "react-icons/si";
-import React, { Fragment, useState, useEffect, useRef } from "react";
-import {
-  // DI
-  DiJavascript1,
-  DiReact,
-  DiMongodb,
-  DiSass,
-} from "react-icons/di";
+import { DiJavascript1, DiReact, DiSass } from "react-icons/di";
 import { TbBrandReactNative } from "react-icons/tb";
-import { GrMysql } from "react-icons/gr";
 
 // ---------------------- Data ----------------------
 const TechStackData = [
   {
     Advance: [
-      {
-        name: "ReactJS",
-        icon: <DiReact className="md:text-4xl text-2xl" color="#53c1de" />,
-      },
-      {
-        name: "JavaScript",
-        icon: (
-          <DiJavascript1 className="md:text-4xl text-2xl" color="#ffd600" />
-        ),
-      },
-      {
-        name: "Redux-toolkit",
-        icon: <SiRedux className="md:text-4xl text-2xl" color="#7e57c2" />,
-      },
-      {
-        name: "HTML5",
-        icon: <AiFillHtml5 className="md:text-4xl text-2xl" color="#fa6700" />,
-      },
-      {
-        name: "CSS3",
-        icon: <FaCss3Alt className="md:text-4xl text-2xl" color="#039be5" />,
-      },
-      {
-        name: "Bootstrap",
-        icon: <FaBootstrap className="md:text-4xl text-2xl" color="#673ab7" />,
-      },
-      {
-        name: "Tailwind CSS",
-        icon: (
-          <SiTailwindcss className="md:text-4xl text-2xl" color="#4caf50" />
-        ),
-      },
-      {
-        name: "Meterial UI",
-        icon: <SiMui className="md:text-4xl text-2xl" color="#29b6f6" />,
-      },
-      {
-        name: "Vercel",
-        icon: (
-          <SiVercel className="dark:text-white text-black md:text-4xl text-2xl" />
-        ),
-      },
-      {
-        name: "Github",
-        icon: <BsGithub className="md:text-4xl text-2xl" color="#c9d1d9" />,
-      },
+      { name: "ReactJS", icon: <DiReact className="md:text-4xl text-2xl" color="#53c1de" /> },
+      { name: "JavaScript", icon: <DiJavascript1 className="md:text-4xl text-2xl" color="#ffd600" /> },
+      { name: "Redux-toolkit", icon: <SiRedux className="md:text-4xl text-2xl" color="#7e57c2" /> },
+      { name: "HTML5", icon: <AiFillHtml5 className="md:text-4xl text-2xl" color="#fa6700" /> },
+      { name: "CSS3", icon: <FaCss3Alt className="md:text-4xl text-2xl" color="#039be5" /> },
+      { name: "Bootstrap", icon: <FaBootstrap className="md:text-4xl text-2xl" color="#673ab7" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="md:text-4xl text-2xl" color="#4caf50" /> },
+      { name: "Meterial UI", icon: <SiMui className="md:text-4xl text-2xl" color="#29b6f6" /> },
+      { name: "Vercel", icon: <SiVercel className="dark:text-white text-black md:text-4xl text-2xl" /> },
+      { name: "Github", icon: <BsGithub className="md:text-4xl text-2xl" color="#c9d1d9" /> },
     ],
     Good: [
-      {
-        name: "NextJS",
-        icon: (
-          <SiNextdotjs className="md:text-4xl text-2xl dark:text-white text-black" />
-        ),
-      },
-      {
-        name: "Express",
-        icon: <SiExpress className="md:text-4xl text-2xl" color="#555555" />,
-      },
-      {
-        name: "Firebase",
-        icon: <SiFirebase className="md:text-4xl text-2xl" color="#ffcd33" />,
-      },
-      {
-        name: "Netlify",
-        icon: <SiNetlify className="md:text-4xl text-2xl" color="#31b5ba" />,
-      },
-      {
-        name: "Git",
-        icon: <BsGit className="md:text-4xl text-2xl" color="#f4511e" />,
-      },
-      {
-        name: "Framer Motion",
-        icon: <SiFramer className="md:text-4xl text-2xl" color="#ff0050" />,
-      },
-      {
-        name: "React Router",
-        icon: (
-          <SiReactrouter className="md:text-4xl text-2xl" color="#f44250" />
-        ),
-      },
-      {
-        name: "Elixir",
-        icon: <SiElixir className="md:text-4xl text-2xl" color="#4B275F" />,
-      },
+      { name: "NextJS", icon: <SiNextdotjs className="md:text-4xl text-2xl dark:text-white text-black" /> },
+      { name: "Express", icon: <SiExpress className="md:text-4xl text-2xl" color="#555555" /> },
+      { name: "Firebase", icon: <SiFirebase className="md:text-4xl text-2xl" color="#ffcd33" /> },
+      { name: "Netlify", icon: <SiNetlify className="md:text-4xl text-2xl" color="#31b5ba" /> },
+      { name: "Git", icon: <BsGit className="md:text-4xl text-2xl" color="#f4511e" /> },
+      { name: "Framer Motion", icon: <SiFramer className="md:text-4xl text-2xl" color="#ff0050" /> },
+      { name: "React Router", icon: <SiReactrouter className="md:text-4xl text-2xl" color="#f44250" /> },
     ],
     Familiar: [
-      {
-        name: "TypeScript",
-        icon: <SiTypescript className="md:text-4xl text-2xl" color="#377cc8" />,
-      },
-      {
-        name: "React Native",
-        icon: (
-          <TbBrandReactNative
-            className="md:text-4xl text-2xl"
-            color="#66dbfb"
-          />
-        ),
-      },
-      {
-        name: "JAVA",
-        icon: <FaJava className="md:text-4xl text-2xl" color="#547c99" />,
-      },
-      {
-        name: "SASS",
-        icon: <DiSass className="md:text-4xl text-2xl" color="#f06292" />,
-      },
-      {
-        name: "Shopify",
-        icon: <FaShopify className="md:text-4xl text-2xl" color="#99c14f" />,
-      },
-      {
-        name: "Node.js",
-        icon: <FaNode className="md:text-4xl text-2xl" color="#539e43" />,
-      },
-      {
-        name: "Django",
-        icon: <SiDjango className="md:text-4xl text-2xl" color="#092E20" />,
-      },
-      {
-        name: "Docker",
-        icon: <FaDocker className="md:text-4xl text-2xl" color="#2496ed" />,
-      },
+      { name: "TypeScript", icon: <SiTypescript className="md:text-4xl text-2xl" color="#377cc8" /> },
+      { name: "React Native", icon: <TbBrandReactNative className="md:text-4xl text-2xl" color="#66dbfb" /> },
+      { name: "SASS", icon: <DiSass className="md:text-4xl text-2xl" color="#f06292" /> },
+      { name: "Shopify", icon: <FaShopify className="md:text-4xl text-2xl" color="#99c14f" /> },
+      { name: "Node.js", icon: <FaNode className="md:text-4xl text-2xl" color="#539e43" /> },
+      { name: "Docker", icon: <FaDocker className="md:text-4xl text-2xl" color="#2496ed" /> },
     ],
   },
 ];
@@ -187,9 +74,7 @@ const TechStack = () => {
 
   useEffect(() => {
     const getScreenWidth = () =>
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
+      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
     const techStackObserver = new IntersectionObserver(
       ([techStackEntry]) => {
@@ -210,9 +95,7 @@ const TechStack = () => {
   }, [istechStack]);
 
   useEffect(() => {
-    const selectedSection = TechStackData.find((sections) =>
-      sections.hasOwnProperty(section)
-    );
+    const selectedSection = TechStackData.find((sections) => sections.hasOwnProperty(section));
     setSectionData(selectedSection ? selectedSection[section] : []);
 
     setTimeout(() => {
@@ -231,23 +114,18 @@ const TechStack = () => {
           <FaLaptopCode /> Tech Stack
         </h2>
         <hr className="border-t-4 border-[#c72c6c] w-20 dark:border-teal-400 mx-auto mb-8" />
-        <div
-          className="flex justify-center gap-4 mb-8 flex-wrap"
-          ref={buttonsRef}
-        >
+        <div className="flex justify-center gap-4 mb-8 flex-wrap" ref={buttonsRef}>
           {["Advance", "Good", "Familiar"].map((cat) => (
             <button
               className={`px-4 py-2 rounded font-semibold transition-all duration-300
-      ${
-        section === cat
-          ? "bg-red-800 dark:bg-teal-700 text-white shadow-md scale-105"
-          : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
-      }`}
+                ${section === cat
+                  ? "bg-red-800 dark:bg-teal-700 text-white shadow-md scale-105"
+                  : "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                }`}
               key={cat}
               onClick={() => {
                 setSection(cat);
-                if (section !== cat)
-                  techBoxesRef.current.classList.remove("pop-up-child");
+                if (section !== cat) techBoxesRef.current.classList.remove("pop-up-child");
               }}
             >
               {cat}
