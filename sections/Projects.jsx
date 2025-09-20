@@ -35,13 +35,6 @@ const Projects = () => {
         projectImage: { imageUrl: "/images/teach.png" },
         techs: ["React Vite", "Tailwind", "TypeScript", "Vercel"],
       },
-      {
-        projectName: "ToDo List",
-        liveUrl: "https://al-jafarawy.github.io/Todo-List/",
-        githubUrl: "https://github.com/Al-Jafarawy/Todo-List.git",
-        projectImage: { imageUrl: "/images/todo.png" },
-        techs: ["React", "Material UI", "Vercel", "ContextAPI"],
-      },
     ],
     JavaScript: [
       {
@@ -51,14 +44,7 @@ const Projects = () => {
         projectImage: { imageUrl: "/images/amazon.png" },
         techs: ["HTML", "CSS", "GitHub", "Vanilla JS"],
       },
-      {
-        projectName: "Old JS Weather App",
-        liveUrl: "https://al-jafarawy.github.io/Old-Js-Weather-App-Project/",
-        githubUrl:
-          "https://github.com/Al-Jafarawy/Old-Js-Weather-App-Project.git",
-        projectImage: { imageUrl: "/images/weather.png" },
-        techs: ["HTML", "CSS", "OpenWeatherAPI", "Vanilla JS"],
-      },
+
       {
         projectName: "Café Aroma",
         liveUrl: "https://al-jafarawy.github.io/coffee-project-js/",
@@ -94,13 +80,6 @@ const Projects = () => {
         liveUrl: "https://al-jafarawy.github.io/Al-Jafarawy/",
         githubUrl: "https://github.com/Al-Jafarawy/Al-Jafarawy.git",
         projectImage: { imageUrl: "/images/portfolio.png" },
-        techs: ["HTML", "CSS3", "Animations", "Keyframes"],
-      },
-      {
-        projectName: "Dream Homes",
-        liveUrl: "https://al-jafarawy.github.io/DreamHomes/",
-        githubUrl: "https://github.com/Al-Jafarawy/DreamHomes.git",
-        projectImage: { imageUrl: "/images/DreamHomes.png" },
         techs: ["HTML", "CSS3", "Animations", "Keyframes"],
       },
     ],
