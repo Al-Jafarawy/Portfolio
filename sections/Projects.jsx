@@ -30,7 +30,7 @@ const Projects = () => {
       },
       {
         projectName: "TeachHub",
-        liveUrl: "https://al-jafarawy-teach-hub.vercel.app/",
+        liveUrl: "https://aljafarawy-teach-hub.vercel.app/",
         githubUrl: "https://github.com/Al-Jafarawy/TeachHub.git",
         projectImage: { imageUrl: "/images/teach.png" },
         techs: ["React Vite", "Tailwind", "TypeScript", "Vercel"],
