@@ -106,7 +106,7 @@ const TechStack = () => {
   return (
     <Fragment>
       <section
-        className="overflow-hidden scroll-mt-20"
+        className="overflow-hidden scroll-mt-20 max-w-7xl mx-auto"
         id="techStack"
         ref={techStackRef}
       >

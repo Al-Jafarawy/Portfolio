@@ -53,7 +53,7 @@ const About = () => {
         </h2>
         <hr className="border-t-4 border-[#c72c6c] dark:border-teal-400 w-20 mx-auto mb-8" />
 
-        <div className="pb-[30px] px-[20px] md:px-[10px] lg:px-[20px] md:flex justify-center md:justify-evenly  items-center bg-red-100 dark:bg-[#1a1a1a] p-8 rounded-b-xl">
+        <div className="pb-[30px] px-[20px] md:px-[10px] lg:px-[20px] md:flex justify-center md:justify-evenly  items-center bg-red-50 dark:bg-[#1a1a1a] p-8 rounded-b-xl">
           <Image
             alt="about image"
             className=" shadow-sm transition-all duration-700 translate-x-[-900px] max-h-[500px] rounded-xl object-cover"
