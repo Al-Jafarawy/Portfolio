@@ -42,17 +42,32 @@ const Projects = () => {
     ],
     JavaScript: [
       {
-        projectName: "YouTube Simulation",
-        liveUrl: "https://al-jafarawy.github.io/Youtube/",
-        githubUrl: "",
-        projectImage: { imageUrl: "/images/youtube.png" },
-        techs: ["HTML", "CSS", "GitHub"],
-      },
-      {
         projectName: "Amazon Simulation",
         liveUrl: "https://al-jafarawy.github.io/Amazon/amazon.html",
         githubUrl: "https://github.com/Al-Jafarawy/Amazon.git",
         projectImage: { imageUrl: "/images/amazon.png" },
+        techs: ["HTML", "CSS", "GitHub", "Vanilla JS"],
+      },
+      {
+        projectName: "/Old-Js-Weather-App",
+        liveUrl:
+          "https://github.com/Al-Jafarawy/Old-Js-Weather-App-Project.git",
+        githubUrl: "https://al-jafarawy.github.io/Old-Js-Weather-App-Project/",
+        projectImage: { imageUrl: "/images/weather.png" },
+        techs: ["HTML", "CSS", "OpenWeatherAPI", "Vanilla JS"],
+      },
+      {
+        projectName: "Café Aroma",
+        liveUrl: "https://al-jafarawy.github.io/coffee-project-js/",
+        githubUrl: "https://github.com/Al-Jafarawy/coffee-project-js.git",
+        projectImage: { imageUrl: "/images/coffee.png" },
+        techs: ["HTML", "CSS", "GitHub", "Vanilla JS"],
+      },
+      {
+        projectName: "Hang Man Game",
+        liveUrl: "https://al-jafarawy.github.io/Hang-Man-Game/",
+        githubUrl: "https://github.com/Al-Jafarawy/Hang-Man-Game.git",
+        projectImage: { imageUrl: "/images/hangman.png" },
         techs: ["HTML", "CSS", "GitHub", "Vanilla JS"],
       },
     ],
