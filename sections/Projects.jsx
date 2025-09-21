@@ -62,6 +62,13 @@ const Projects = () => {
     ],
     CSS: [
       {
+        projectName: "YouTube Simulation",
+        liveUrl: "https://al-jafarawy.github.io/Youtube/",
+        githubUrl: "",
+        projectImage: { imageUrl: "/images/youtube.png" },
+        techs: ["HTML", "CSS", "GitHub"],
+      },
+      {
         projectName: "Kasper",
         liveUrl: "https://al-jafarawy.github.io/Kasper-elzero/",
         githubUrl: "https://github.com/Al-Jafarawy/Kasper-elzero.git",
